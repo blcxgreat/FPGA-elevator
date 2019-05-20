@@ -1,0 +1,8 @@
+
+module comparator(A, B, result);
+   input logic [9:0] A;
+	input logic [9:0] B;
+	output logic result;
+	
+	assign result = (A > B);
+endmodule

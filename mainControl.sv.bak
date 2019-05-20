@@ -1,0 +1,91 @@
+
+module mainControl (clk, reset, L, R, leftleds, rightleds, display, win);
+
+	input  logic clk, reset, leftleds, rightleds, L, R;
+	output logic [6:0] display;
+	output logic win;
+	
+	// State variables.
+	enum { first, second, secondM, third, thirdM, forth} ps, ns;
+	
+	
+	// Next State logic
+	always_comb begin
+		case(ps)
+		first: begin
+		       lightW = 1'b1;
+				 lightE = 1'b1;
+				 direction = 1'b1;
+			    display = 7'b1000000;//0
+		       if(destination[5:1] == {0,0,0,0,0})  ns = first;
+		       else                                 ns = second;
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+			    end
+			
+		B: begin
+		   display = 7'b1111001;//1
+		   if(leftleds&L&~R)       ns = C;
+		   else if(rightleds&R&~L) ns = C;
+			else                    ns = B; 
+			end
+			
+		C: begin
+		   display = 7'b0100100;//2
+		   if(leftleds&L&~R)       ns = D;
+		   else if(rightleds&R&~L) ns = D ;
+			else 						   ns = C ; 
+			end
+			
+		D: begin
+		   display = 7'b0110000;//3
+		   if(leftleds&L&~R)       ns = E;
+		   else if(rightleds&R&~L) ns = E ;
+			else                    ns = D ; 
+			end
+			
+		E: begin
+		   display = 7'b0011001;//4
+		   if(leftleds&L&~R)       ns = F;
+		   else if(rightleds&R&~L) ns = F;
+			else                    ns = E; 
+			end
+			
+		F: begin
+		   display = 7'b0010010;//5
+		   if(leftleds&L&~R)       ns = G;
+		   else if(rightleds&R&~L) ns = G;
+			else                    ns = F; 
+			end
+			
+		G: begin
+		   display = 7'b0000010;//6
+		   if(leftleds&L&~R)       ns = H;
+		   else if(rightleds&R&~L) ns = H;
+			else                    ns = G; 
+			end
+			
+		H: begin
+		   display = 7'b1111000;//7
+		   ns = H ; 
+			end
+      //default ns = A;
+	   endcase
+	end
+		
+		assign win = (leftleds&L | rightleds&R);
+			
+	// DFFs
+	always_ff@(posedge clk)begin
+	   if (reset)
+		   ps <= A;
+		else
+		   ps <= ns;
+   end
+
+endmodule

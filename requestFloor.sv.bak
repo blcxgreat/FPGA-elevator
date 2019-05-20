@@ -1,0 +1,17 @@
+
+module requestFloor (SW, clk, reset, whichFloor, closeDoor);
+input logic [6:1] SW;
+input logic reset, clk, closeDoor;
+output logic [6:1] whichFloor; 
+
+always @ ( posedge clk) begin 
+		if(reset)
+		whichFloor[6:1] <= 6'b000001;
+		
+		else if (closeDoor)
+		whichFloor[6:1] <=  SW[6:1] ;
+		 
+		else
+		whichFloor[6:1] <=  whichFloor[6:1];
+		end 
+endmodule

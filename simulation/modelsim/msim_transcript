@@ -1,0 +1,60 @@
+# Reading D:/SOFTWARES/components/modelsim_ase/tcl/vsim/pref.tcl
+# do DE1_SoC_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying D:/SOFTWARES/components/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/10737/Desktop/lab6/lab6 {C:/Users/10737/Desktop/lab6/lab6/mainControl.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:42:18 on Aug 14,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/10737/Desktop/lab6/lab6" C:/Users/10737/Desktop/lab6/lab6/mainControl.sv 
+# -- Compiling module mainControl
+# -- Compiling module mainControl_testbench
+# ** Warning: C:/Users/10737/Desktop/lab6/lab6/mainControl.sv(534): (vlog-2697) MSB of part-select into 'destination' is out of bounds.
+# ** Warning: C:/Users/10737/Desktop/lab6/lab6/mainControl.sv(540): (vlog-2697) MSB of part-select into 'destination' is out of bounds.
+# ** Warning: C:/Users/10737/Desktop/lab6/lab6/mainControl.sv(546): (vlog-2697) MSB of part-select into 'destination' is out of bounds.
+# ** Warning: C:/Users/10737/Desktop/lab6/lab6/mainControl.sv(552): (vlog-2697) MSB of part-select into 'destination' is out of bounds.
+# ** Warning: C:/Users/10737/Desktop/lab6/lab6/mainControl.sv(558): (vlog-2697) MSB of part-select into 'destination' is out of bounds.
+# ** Warning: C:/Users/10737/Desktop/lab6/lab6/mainControl.sv(563): (vlog-2697) MSB of part-select into 'destination' is out of bounds.
+# ** Warning: C:/Users/10737/Desktop/lab6/lab6/mainControl.sv(568): (vlog-2697) MSB of part-select into 'destination' is out of bounds.
+# ** Warning: C:/Users/10737/Desktop/lab6/lab6/mainControl.sv(573): (vlog-2697) MSB of part-select into 'destination' is out of bounds.
+# ** Warning: C:/Users/10737/Desktop/lab6/lab6/mainControl.sv(578): (vlog-2697) MSB of part-select into 'destination' is out of bounds.
+# ** Warning: C:/Users/10737/Desktop/lab6/lab6/mainControl.sv(581): (vlog-2697) MSB of part-select into 'destination' is out of bounds.
+# ** Warning: C:/Users/10737/Desktop/lab6/lab6/mainControl.sv(583): (vlog-2697) MSB of part-select into 'destination' is out of bounds.
+# ** Warning: C:/Users/10737/Desktop/lab6/lab6/mainControl.sv(585): (vlog-2697) MSB of part-select into 'destination' is out of bounds.
+# ** Warning: C:/Users/10737/Desktop/lab6/lab6/mainControl.sv(587): (vlog-2697) MSB of part-select into 'destination' is out of bounds.
+# ** Warning: C:/Users/10737/Desktop/lab6/lab6/mainControl.sv(590): (vlog-2697) MSB of part-select into 'destination' is out of bounds.
+# ** Warning: C:/Users/10737/Desktop/lab6/lab6/mainControl.sv(592): (vlog-2697) MSB of part-select into 'destination' is out of bounds.
+# 
+# Top level modules:
+# 	mainControl_testbench
+# End time: 20:42:18 on Aug 14,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 15
+# 
+vsim work.mainControl_testbench
+# vsim work.mainControl_testbench 
+# Start time: 20:42:20 on Aug 14,2018
+# Loading sv_std.std
+# Loading work.mainControl_testbench
+# Loading work.mainControl
+add wave -position end  sim:/mainControl_testbench/destination
+add wave -position end  sim:/mainControl_testbench/display1
+add wave -position end  sim:/mainControl_testbench/display2
+add wave -position end  sim:/mainControl_testbench/HEXdisplay3
+add wave -position end  sim:/mainControl_testbench/HEXdisplay2
+add wave -position end  sim:/mainControl_testbench/HEXdisplay1
+add wave -position end  sim:/mainControl_testbench/HEXdisplay0
+add wave -position end  sim:/mainControl_testbench/direction
+add wave -position end  sim:/mainControl_testbench/directionlight
+run -all
+# ** Note: $stop    : C:/Users/10737/Desktop/lab6/lab6/mainControl.sv(600)
+#    Time: 7650 ps  Iteration: 1  Instance: /mainControl_testbench
+# Break in Module mainControl_testbench at C:/Users/10737/Desktop/lab6/lab6/mainControl.sv line 600
+# End time: 20:55:50 on Aug 14,2018, Elapsed time: 0:13:30
+# Errors: 0, Warnings: 0
