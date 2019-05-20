@@ -1,5 +1,5 @@
 # FPGA-elevator
-Final project for intro to embedded system
+Final project for intro to digital circuits and systems
 
 Coded in 2018 by Chunguang(Eric) Xie
 
